@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>RENOVEGGAは移転いたしました。</title>
+	<meta http-equiv="refresh" content="10; URL=http://renovegga.ugokasemondo.com/">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.css">
+	<style type="text/css">
+		.wrap-wall {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			color: rgba(155,155,155,.7);
+			z-index: 10;
+		}
+
+		.wrap {
+			border-radius: 5px;
+			border: 5px solid #ccc;
+			padding: 20px;
+			width: 40%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			height: 280px;
+			z-index: 200;
+			color: #666;
+			background-color: #fff;
+
+			/* border-radius */
+			border-radius:5px;
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+
+			/* border */
+			border:8px solid #72b626;
+		}
+
+		.emphasis {
+			font-size: 1.4em;
+		}
+
+		.close {
+			font-size: 2em;
+			position: absolute;
+			right: 5%;
+			top: 1%;
+			cursor: pointer;
+			transition: .3s ease-in-out;
+			text-decoration: none;
+		}
+
+		.close:hover {
+			color: #72b626;
+		}
+
+		h1 {
+			font-size: 18px;
+		}
+
+		p {
+			font-size: 12px;
+		}
+
+		.caution {
+			text-align: center;
+			color: orange;
+			margin-top: 1.5em;
+			cursor: pointer;
+			transition: .3s ease-in-out;
+		}
+
+		.caution:hover {
+			color: red;
+		}
+
+		#renovegga-logo img {
+			position: absolute;
+			width: 100%;
+			max-width: 1200px;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="wrap-wall fadeInDown animated">
+		<div class="wrap fadeInDown animated">
+			<a class="close" href="#" title="閉じる">×</a>
+			<h1>リニューアルのお知らせ</h1>
+			<p>リノベっがへご訪問いただき誠にありがとうございます。</p>
+			<p>ホームページリニューアルにともない、親会社である<br>
+				<strong class="emphasis">株式会社大城（http://ugokasemondo.com）</strong><br>内へ移動いたしました。</p>
+			<p>新しいURLは、<br>
+			<strong class="emphasis"><a href="http://renovegga.ugokasemondo.com/">http://renovegga.ugokasemondo.com/</a></strong><br>
+			となります。</p>
+			<p>今後ともリノベっがをどうぞお願いいたします。</p>
+			<small>※ 10秒後に移動します。</small>
+		</div>
+	</div>
+
+	<div id="renovegga-logo">
+		<img src="/images/renovegga_ogp.png" alt="リノベっが">
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" charset="UTF-8"></script>
+	<script src="/js/jquery.cookie.js"></script>
+	<script>
+		if( $.cookie( 'nomore' ) === 'notneed' ) {
+			$( '.wrap-wall' ).css({ display: 'none' });
+		}
+		$( '.close' ).on( 'click', function() {
+			$( '.wrap-wall' ).addClass( 'fadeOutUp' );
+		} );
+		$( '.caution' ).on( 'click', function() {
+			$( '.wrap-wall' ).addClass( 'fadeOutUp' );
+			$.cookie( 'nomore' , 'notneed', { expires: 7 , path: '/'} );
+		} );
+	</script>
+</body>
+</html>
